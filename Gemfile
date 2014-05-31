@@ -27,7 +27,7 @@ gem 'dm-core'
 # Test requirements
 gem 'cucumber', :group => 'test'
 gem 'capybara', :group => 'test'
-gem 'rspec_junit_formatter' => :group => 'test'
+gem 'rspec_junit_formatter', :group => 'test'
 gem 'simplecov', :group => 'test'
 gem 'rspec', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
