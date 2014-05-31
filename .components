@@ -1,0 +1,9 @@
+---
+:orm: datamapper
+:test: rspec
+:mock: none
+:script: jquery
+:renderer: slim
+:stylesheet: none
+:namespace: Makaya2
+:migration_format: number
