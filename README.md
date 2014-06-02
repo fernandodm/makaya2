@@ -1,3 +1,10 @@
+---
+title: Vision-Makaya2
+author: Di Meglio, Mottesi, Vallejos
+layout: post
+---
+===============
+
 Índice
 
 INTRODUCCIÓN
