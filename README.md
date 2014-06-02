@@ -19,7 +19,7 @@ RIESGOS
 INTRODUCCIÓN  
 El presente documento tiene por objeto documentar la visión general del proyecto. El objetivo es proveer una visión de alto nivel de los elementos que se abarcarán en el sistema, quienes están involucrados, la funcionalidad que abarca el sistema, sus necesidades, los objetivos principales del sistema y las restricciones.  
 	
-	ENUNCIADO DEL PROBLEMA  
+ENUNCIADO DEL PROBLEMA  
 
 Necesidad:  
 [Cliente] tiene la necesidad de contar con un sistema para gestionar un torneo de algún deporte y mostrar la información tanto de las fechas como de la tabla general.  
