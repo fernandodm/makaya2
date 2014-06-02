@@ -33,3 +33,4 @@ if ['development', 'test', 'travis'].include?(PADRINO_ENV)
     t.pattern = "./spec/**/*_spec.rb"
     t.rspec_opts = %w(--format RspecJunitFormatter --out reports/spec/spec.xml)
   end
+end
