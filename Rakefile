@@ -52,6 +52,6 @@ if ['development', 'test', 'travis'].include?(PADRINO_ENV)
   end
   
  
-	task :default => [:all]
+	task :default => [:travis]
 
 end
