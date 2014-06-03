@@ -1,5 +1,12 @@
 language: ruby
 version: 1.9.3
 before_script:
-    - "sh -e /etc/init.d/xvfb start"
+- sh -e /etc/init.d/xvfb start
 script: PADRINO_ENV=travis bundle exec padrino rake
+deploy:
+  provider: heroku
+  api_key:
+    secure: GZTZDwayUg7PghUtKX0i862U26XoR1mvBnGfA9ixP53avA5DVHGvPU5NXRIONJreqhQY5Lq+9FNbjAb8SP62c77tPmk7V5oZublbMU+xcRVx3bjiVPuTFY9Ge5TdJDlFdbZqDPXicfHMmxIvCzZLM+R4l5hu5nyQHBlRCABDSlw=
+  app: macaya2-production
+  on:
+    repo: fernandodm/makaya2
