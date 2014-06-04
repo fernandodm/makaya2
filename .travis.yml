@@ -3,10 +3,3 @@ version: 1.9.3
 before_script:
 - sh -e /etc/init.d/xvfb start
 script: PADRINO_ENV=travis bundle exec padrino rake
-deploy:
-  provider: heroku
-  api_key:
-    secure: cVOLbF5nf5eOx6FiriOfsoQ5n0hUHgk1duzHy67uRTPzCmoUBBbdi4+LXJ1ZTtkRRzUdUvEqcKUO2MiPDymMrYWnNKsycozh41y7yALdqFgSOpJErflri7EFxS2WUFhP4B2XddUIxrt9syJYqWsoq4GBKAUmDituDheBsL7seTQ=
-  app: makaya2-production
-  on:
-    repo: fernandodm/makaya2
