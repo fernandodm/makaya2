@@ -13,7 +13,7 @@ PadrinoTasks.init
 puts "PADRINO_ENV: #{PADRINO_ENV}"
 if ['development', 'test', 'travis'].include?(PADRINO_ENV)
 
-  task :all do
+  task :travis do
   ["rake spec", "rake cucumber"].each do |cmd|
     puts "Starting to run #{cmd}..."
     system("export DISPLAY=:99.0 && bundle exec #{cmd}")
@@ -59,6 +59,6 @@ if ['development', 'test', 'travis'].include?(PADRINO_ENV)
     task.fail_on_error = false
   end
   
-	task :default => [:all]
+	task :default => [:travis]
 
 end
