@@ -5,6 +5,13 @@ RSpec.configure do |conf|
   conf.include Rack::Test::Methods
 end
 
+
+# if you load it manually
+config.formatter = TimestampFormatter
+# or if you do not want to autoload it by rspec means, but it should be in
+# search path
+config.formatter = 'TimestampFormatter'
+
 # You can use this method to custom specify a Rack app
 # you want rack-test to invoke:
 #
