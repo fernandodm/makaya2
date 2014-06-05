@@ -9,5 +9,6 @@ deploy:
   api_key:
     secure: NnK44G3rBAPBFK/VlqXwiS/QB8Y+jqphYICNNeHZvOCbqm2O4U7VCaRTVoyr7kL4sBn/j4SVXC6d6JsQXahL4eEDH4/F+WUcAyD58Axh2T5fCM4aPScBXtHcvrkkgrCZ4eY2wBJFs4mRwmqwMmF+QA3ofZv3JrR85zT+92pyhnM=
   app: macaya2-production
+  gem: travis
   on:
     repo: fernandodm/makaya2
