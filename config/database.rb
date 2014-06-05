@@ -29,6 +29,8 @@
 #   <<: *defaults
 #   database: example_production
 #
+postgres = URI.parse(ENV['DATABASE_URL'] || '')
+
 ActiveRecord::Base.configurations[:travis] = {
   :adapter  => 'postgresql',
   :encoding => 'utf8',
