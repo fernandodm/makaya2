@@ -31,7 +31,7 @@
 #
 postgres = URI.parse(ENV['DATABASE_URL'] || '')
 
-ActiveRecord::Base.configurations[:travis] = {
+DataMapper::Base.configurations[:travis] = {
   :adapter  => 'postgresql',
   :encoding => 'utf8',
   :database => postgres.path[1..-1], 
