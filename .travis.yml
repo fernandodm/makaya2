@@ -2,7 +2,7 @@ language: ruby
 version: 1.9.3
 before_script:
 - sh -e /etc/init.d/xvfb start
-script: PADRINO_ENV=travis exec padrino rake
+script: PADRINO_ENV=travis bundle exec padrino rake
 deploy:
   provider: heroku
   api_key:
