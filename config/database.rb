@@ -29,6 +29,12 @@
 #   <<: *defaults
 #   database: example_production
 #
+ActiveRecord::Base.configurations[:travis] = {
+  :adapter  => 'postgresql',
+  :encoding => 'utf8',
+  :database => postgres.path[1..-1], 
+  :host     => postgres.host
+}
 
 DataMapper.logger = logger
 DataMapper::Property::String.length(255)
