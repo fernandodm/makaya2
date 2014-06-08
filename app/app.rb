@@ -1,32 +1,32 @@
 module Makaya2
   class App < Padrino::Application
+    register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Sprockets
+    #register Padrino::Admin::AccessControl
+    sprockets :minify => (Padrino.env == :production)
 
     enable :sessions
+    
 
     ##
-    # Caching support.
+    # Caching support
     #
     # register Padrino::Cache
     # enable :caching
     #
     # You can customize caching store engines:
     #
-    # set :cache, Padrino::Cache.new(:LRUHash) # Keeps cached values in memory
-    # set :cache, Padrino::Cache.new(:Memcached) # Uses default server at localhost
-    # set :cache, Padrino::Cache.new(:Memcached, '127.0.0.1:11211', :exception_retry_limit => 1)
-    # set :cache, Padrino::Cache.new(:Memcached, :backend => memcached_or_dalli_instance)
-    # set :cache, Padrino::Cache.new(:Redis) # Uses default server at localhost
-    # set :cache, Padrino::Cache.new(:Redis, :host => '127.0.0.1', :port => 6379, :db => 0)
-    # set :cache, Padrino::Cache.new(:Redis, :backend => redis_instance)
-    # set :cache, Padrino::Cache.new(:Mongo) # Uses default server at localhost
-    # set :cache, Padrino::Cache.new(:Mongo, :backend => mongo_client_instance)
-    # set :cache, Padrino::Cache.new(:File, :dir => Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
+    # set :cache, Padrino::Cache::Store::Memcache.new(::Memcached.new('127.0.0.1:11211', :exception_retry_limit => 1))
+    # set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1))
+    # set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(:host => '127.0.0.1', :port => 6379, :db => 0))
+    # set :cache, Padrino::Cache::Store::Memory.new(50)
+    # set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
     #
 
     ##
-    # Application configuration options.
+    # Application configuration options
     #
     # set :raise_errors, true       # Raise exceptions (will stop application) (default for test)
     # set :dump_errors, true        # Exception backtraces are written to STDERR (default for production/development)
