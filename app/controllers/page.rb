@@ -1,7 +1,7 @@
 Makaya2::App.controllers :page do
 
     get :index, :map => '/' do
-        render 'page/index'
+        render 'page/index2'
     end  
     
   # get :index, :map => '/foo/bar' do
