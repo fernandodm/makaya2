@@ -6,6 +6,7 @@ class Torneo
   property :nombre, String
   property :cantEquipos, Integer
   
+  validates_presence_of :nombre
   
   def self.todos_torneos
     Torneo.all()

@@ -1,0 +1,8 @@
+<h1>Nuevo torneo</h1>
+<% form_for(@torneo, '/torneo/crear') do |f| %>
+
+  <%= partial 'torneo/form', :locals => { :f => f } %>
+
+  <%= f.submit "Crear", :class => "btn btn-primary" %>
+  <%= link_to 'Cancelar', url_for(:torneo, :index), :class => "btn btn-secondary" %>
+<% end %>
