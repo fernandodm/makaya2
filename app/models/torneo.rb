@@ -4,9 +4,15 @@ class Torneo
   # property <name>, <type>
   property :id, Serial
   property :nombre, String
-  property :fechas, []
   property :cantEquipos, Integer
-  property :ptsGanados, Integer
-  property :ptsEmpate, Integer
-  property :ptsPerdido, Integer
-end
+  
+  
+  def self.todos_torneos
+    Torneo.all()
+  end
+  
+  
+  end
+  
+  
+  

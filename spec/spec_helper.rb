@@ -1,5 +1,6 @@
 PADRINO_ENV = 'test' unless defined?(PADRINO_ENV)
 
+
 require 'simplecov'
 SimpleCov.start do
 	root(File.join(File.dirname(__FILE__), '..'))

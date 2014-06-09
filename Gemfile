@@ -30,6 +30,9 @@ gem 'padrino-sprockets', :require => "padrino/sprockets"
 gem 'uglifier', '2.1.1'
 gem 'yui-compressor', '0.9.6'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'json'
+gem 'clockwork'
+gem 'twitter'
 
 # Test requirements
 group :staging, :production do
@@ -47,11 +50,11 @@ group :development, :test do
   gem 'rspec'
   gem 'simplecov', "0.8.0.pre"
   gem 'rack-test', :require => 'rack/test'
-  gem 'rubocop', :github => 'bbatsov/rubocop'
+  gem 'rubocop',  :github => 'bbatsov/rubocop'
 end
 
 group :development do
-  gem 'guard'
+  gem 'guard'   
   gem 'guard-rspec'
   gem 'debugger'
 end
@@ -62,5 +65,6 @@ end
 
 # Or Individual Gems
 # %w(core gen helpers cache mailer admin).each do |g|
-# gem 'padrino-' + g, '0.11.2'
+#   gem 'padrino-' + g, '0.11.2'
 # end
+
