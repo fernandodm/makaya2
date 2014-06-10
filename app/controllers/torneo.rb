@@ -19,7 +19,7 @@ Makaya2::App.controllers :torneo do
       @torneo_nuevo = Torneo.new(params[:torneo])
       if @torneo_nuevo.save
      	flash[:success] = 'Torneo creado'
-      	redirect '/torneo/index'
+      	redirect '/torneo/latest'
       else
       	flash.now[:error] = 'Nombre obligatorio'
       	render 'torneo/new'

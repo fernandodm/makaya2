@@ -44,10 +44,9 @@ module Makaya2
     ##
     # You can configure for a specified environment like:
     #
-    #   configure :development do
-    #     set :foo, :bar
-    #     disable :asset_stamp # no asset timestamping for dev
-    #   end
+       configure :development do
+         DataMapper.auto_upgrade!
+       end
     #
 
     ##

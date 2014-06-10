@@ -16,7 +16,7 @@ When(/^confirmo la creacion del torneo$/) do
 end
 
 Then(/^deberia ver "(.*?)"$/) do |arg1|
-  visit '/torneo/latest'
+  
   page.should have_content(arg1) 
   
 end

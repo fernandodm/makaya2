@@ -41,6 +41,7 @@ end
 #
 Padrino.after_load do
   DataMapper.finalize
+
 end
 
 Padrino.load!
