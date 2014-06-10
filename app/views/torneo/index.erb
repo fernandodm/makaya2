@@ -1,0 +1,21 @@
+<h1>Torneos</h1>
+<table class="table table-bordered">
+	<tr>
+		<th>Nombre</th>
+		<th>Cantidad de equipos</th>
+	</tr>
+	<% @torneos.each do | torneo| %>
+
+	<tr>
+		<td>
+			<%= torneo.nombre %>
+		</td>
+		<td>
+			<%= torneo.cantEquipos %>
+		</td>
+				
+	</tr>
+
+  <% end %>
+
+</table>

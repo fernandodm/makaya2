@@ -4,7 +4,7 @@ describe "TorneoController" do
     describe 'default' do
 
   	    before do
-     		get "/torneo"
+     		get "/torneo/latest"
   	    end
 
   	it 'should return Lista de torneos' do
