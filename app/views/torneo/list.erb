@@ -6,7 +6,7 @@
 		<th>Cantidad de equipos</th>
 		
 	</tr>
-	<% @torneo.each do | offer| %>
+	<% @torneos.each do | torneo| %>
 
 	<tr>
 		<td>
@@ -14,10 +14,7 @@
 		</td>
 		<td>
 			<%= torneo.cantEquipos %>
-		</td>
-		<!--<td>
-			<%= link_to 'Cargar equipos', url_for(), :class => "btn btn-primary" %>
-		</td> -->		
+		</td>	
 	</tr>
 
   <% end %>

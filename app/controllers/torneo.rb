@@ -6,7 +6,7 @@ Makaya2::App.controllers :torneo do
     end  
 
     get :index do
-        @torneo = Torneo.todos_torneos
+        @torneo = Torneo.all
         render 'torneo/list'
     end
 
@@ -20,6 +20,11 @@ Makaya2::App.controllers :torneo do
       	render 'torneo/new'
     	end  
 
+    end
+
+    get :latest do
+      @torneos = Torneo.all
+      render 'torneo/list'
     end
     
 

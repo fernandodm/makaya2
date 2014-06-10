@@ -16,8 +16,8 @@
             <div class="container">
               <ul class="nav">
                 <li><%= link_to 'Home', url_for(:page, :index) %></li>
-                <li><%= link_to 'Torneos', url_for(:page, :index) %></li>
-                <li><%= link_to 'Crear Torneo' , url_for(:page, :index) %></li>
+                <li><%= link_to 'Torneos', url_for(:torneo, :latest) %></li>
+                <li><%= link_to 'Crear Torneo' , url_for(:torneo, :new) %></li>
               </ul>
             </div>
           </div>
