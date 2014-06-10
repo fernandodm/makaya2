@@ -1,0 +1,17 @@
+<h1>Equipos</h1>
+<table class="table table-bordered">
+	<tr>
+		<th>Nombre</th>
+	</tr>
+	<% @equipos.each do | equipo | %>
+
+	<tr>
+		<td>
+			<%= equipo.nombreEquipo %>
+		</td>
+				
+	</tr>
+
+  <% end %>
+
+</table>
