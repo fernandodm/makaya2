@@ -44,9 +44,9 @@ module Makaya2
     ##
     # You can configure for a specified environment like:
     #
-       configure :development do
-         DataMapper.auto_upgrade!
-       end
+    #   configure :development do
+    #     DataMapper.auto_upgrade!
+    #   end
     #
 
     ##
