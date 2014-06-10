@@ -1,0 +1,20 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: ddl7cq88l1k67r
+  username: zpijyrxlsvxsjs
+  password: VtKJZzGANxDyms3MGf9e8rlrvE
+  host: postgres://zpijyrxlsvxsjs:VtKJZzGANxDyms3MGf9e8rlrvE@ec2-107-20-191-205.compute-1.amazonaws.com:5432/ddl7cq88l1k67r
+  port: 5432  
