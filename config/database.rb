@@ -19,7 +19,7 @@
 #   database: example_development
 #   username: user
 #   password: Pa55w0rd
-#   host: 127.0.0.1
+#   host: 127.0.0.1cl
 #
 # test:
 #   <<: *defaults
@@ -29,6 +29,7 @@
 #   <<: *defaults
 #   database: example_production
 #
+
 
 
 DataMapper.logger = logger
