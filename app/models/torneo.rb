@@ -4,7 +4,7 @@ class Torneo
   # property <name>, <type>
   property :id, Serial 
   property :nombre, String
-  property :cantEquipos, Integer
+  property :cant_equipos, Integer
   
   validates_presence_of :nombre
   

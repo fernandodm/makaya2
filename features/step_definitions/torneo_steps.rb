@@ -8,7 +8,7 @@ When(/^Lleno los campos Titulo del torneo con "(.*?)"$/) do |arg1|
 end
 
 When(/^cantidad de equipos con (\d+)$/) do |arg1|
-  fill_in('torneo[cantEquipos]', :with => arg1)  
+  fill_in('torneo[cant_equipos]', :with => arg1)  
 end
 
 When(/^confirmo la creacion del torneo$/) do

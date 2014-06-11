@@ -8,7 +8,7 @@ describe Torneo do
 
 		it { should respond_to( :id) }
 		it { should respond_to( :nombre ) }
-		it { should respond_to( :cantEquipos) }
+		it { should respond_to( :cant_equipos) }
 
 	end
 
