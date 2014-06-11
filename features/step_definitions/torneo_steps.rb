@@ -21,3 +21,23 @@ Then(/^deberia ver "(.*?)"$/) do |arg1|
   
 end
 
+Given(/^que estoy en la pagina de creacion de torneo$/) do
+  visit 'torneo/new'
+end
+
+When(/^lleno el titulo con "(.*?)"$/) do |arg1|
+  fill_in('torneo[nombre]', :with => arg1)
+end
+
+When(/^el sistema de puntos ganados (\d+)$/) do |arg1|
+  fill_in('torneo[pts_ganados]', :with => arg1)
+end
+
+When(/^empatados (\d+)$/) do |arg1|
+  fill_in('torneo[pts_empatados]', :with => arg1)
+end
+
+When(/^perdidos (\d+)$/) do |arg1|
+  fill_in('torneo[pts_perdidos]', :with => arg1)
+end
+
