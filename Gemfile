@@ -60,7 +60,9 @@ group :development do
   gem 'debugger'
 end
 
-
+group :production do
+ gem 'pg'
+end
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 
