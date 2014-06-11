@@ -7,7 +7,7 @@ describe Equipo do
 		subject { @equipo = Equipo.new }
 
 		it { should respond_to( :id) }
-		it { should respond_to( :nombreEquipo ) }
+		it { should respond_to( :nombre_equipo ) }
 
 	end
 

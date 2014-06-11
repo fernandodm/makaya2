@@ -3,7 +3,7 @@ class Equipo
 
   # property <name>, <type>
   property :id, Serial
-  property :nombreEquipo, String
+  property :nombre_equipo, String
 
 
 end
