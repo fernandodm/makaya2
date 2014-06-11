@@ -51,5 +51,5 @@ case Padrino.env
   when :travis      then DataMapper.setup(:default, 'sqlite3::memory:')
   when :test        then DataMapper.setup(:default, 'sqlite3::memory:')
   when :staging 	then DataMapper.setup(:default, ENV['DATABASE_URL'])
-  when :production  then DataMapper.setup(:default, ENV['DATABASE_URL'])
+  #when :production  then DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
