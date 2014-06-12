@@ -40,10 +40,6 @@ group :staging, :production do
   gem 'dm-postgres-adapter'
 end
 
-configure :production do
-    DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_CYAN_URL'])
-end
-
 
 # Padrino Stable Gem
 gem 'padrino', '0.11.2'
