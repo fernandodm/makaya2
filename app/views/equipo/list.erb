@@ -3,7 +3,7 @@
 <table class="table table-bordered">
 	<tr>
 		<th>Nombre Equipo</th>
-		
+        <th>Acciones</th>		
 	</tr>
 	<% @equipos.each do | equipo | %>
 
@@ -11,6 +11,16 @@
 		<td>
 			<%= equipo.nombre_equipo %>
 		</td>
+		
+		<% if equipo.nombre_equipo.nil? %> 
+    		<td>
+	    	    <%= link_to 'Crear equipo', url_for(:equipo, :editar_crear, :equipo_id => equipo.id), :class => "btn btn-primary" %>	     
+    	    </td>
+		<% else %>
+		    <td>
+	    	    <%= link_to 'Editar equipo', url_for(:equipo, :editar, :equipo_id => equipo.id), :class => "btn btn-primary" %>	     
+    	    </td>
+    	<% end %>
 	</tr>
 
   <% end %>

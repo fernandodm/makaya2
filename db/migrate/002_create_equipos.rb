@@ -3,6 +3,7 @@ migration 2, :create_equipos do
     create_table :equipos do
       column :id, Integer, :serial => true
       column :nombre_equipo, DataMapper::Property::String, :length => 255
+      column :torneo_id, Integer
     end
   end
 

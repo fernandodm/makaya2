@@ -10,5 +10,7 @@ describe Equipo do
 		it { should respond_to( :nombre_equipo ) }
 
 	end
-
+	
+	
+	
 end

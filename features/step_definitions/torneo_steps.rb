@@ -41,3 +41,10 @@ When(/^perdidos (\d+)$/) do |arg1|
   fill_in('torneo[pts_perdidos]', :with => arg1)
 end
 
+
+When(/^cantidad de equipos con \-(\d+)$/) do |arg1|
+  fill_in('torneo[cant_equipos]', :with => arg1)    
+end
+
+
+
