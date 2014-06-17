@@ -10,7 +10,6 @@ class Torneo
   property :pts_perdidos, Integer
   
   has n, :equipos
-	has n, :partidos
   
   validates_presence_of :nombre
   

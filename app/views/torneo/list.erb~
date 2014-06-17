@@ -21,11 +21,6 @@
 		    <%= torneo.pts_empatados %>
 		    <%= torneo.pts_perdidos  %>
 		</td>
-
-	<td>
-			<%= link_to 'Ver Partidos', url_for(:partido, :misPartidos, :torneo_id => torneo.id), :class => "btn btn-primary" %>
-		</td>
-
 		<td>
 			<%= link_to 'Ver Equipos', url_for(:equipo, :misEquipos, :torneo_id => torneo.id), :class => "btn btn-primary" %>
 		</td>

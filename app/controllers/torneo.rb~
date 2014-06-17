@@ -35,10 +35,10 @@ Makaya2::App.controllers :torneo do
 
       for i in 1 .. (cantPartidos) do
        	part = Partido.new
-       	aryPartido.push(part)
+       	ary.push(part)
       end
 
-      @torneo.partidos = aryPartido
+      @torneo.partidos = ary
 			
       for i in 1 .. (@torneo.cant_equipos) do
         eq = Equipo.new

@@ -1,0 +1,40 @@
+<h1>Fixture</h1>
+
+<table class="table table-bordered">
+	<tr>
+		<th>Partidos</th>	
+	</tr>
+	<% @partidos.each do | partido | %>
+
+	<tr>
+		<td style="width: -10px">
+			<%= partido.equipo1 %>
+		</td>
+		
+		<td>
+			<%= partido.resultado1 %>
+		</td>
+
+		<td>
+			<%= partido.equipo2 %>
+		</td>
+
+		<td>
+			<%= partido.resultado2 %>
+		</td>
+
+
+		<% if partido.equipo1.nil? && partido.equipo2.nil? && partido.resultado1.nil? && partido.resultado2.nil? %> 
+    		<td>
+	    	    <%= link_to 'Crear partido', url_for(:partido, :editar_crear, :partido_id => partido.id), :class => "btn btn-primary" %>	     
+    	    </td>
+		<% else %>
+		    <td>
+	    	    <%= link_to 'Editar partido', url_for(:partido, :editar, :partido_id => partido.id), :class => "btn btn-primary" %>	     
+    	    </td>
+    	<% end %>
+	</tr>
+
+  <% end %>
+
+</table>
