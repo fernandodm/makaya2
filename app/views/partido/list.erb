@@ -19,12 +19,13 @@
 			<%= partido.resultado2 %>
 		</td>
 
-		<td style="width: 130px">
+		<!--style="width: 130px"-->
+		<td style="width: 200px">
 			<%= partido.equipo2 %>
 		</td>
 
 
-		<% if partido.equipo1.nil? && partido.equipo2.nil? && partido.resultado1.nil? && partido.resultado2.nil? %> 
+		<!--<% if partido.equipo1.nil? && partido.equipo2.nil? && partido.resultado1.nil? && partido.resultado2.nil? %> 
     		<td style="text-align:center">
 	    	    <%= link_to 'Crear partido', url_for(:partido, :editar_crear, :partido_id => partido.id), :class => "btn btn-primary" %>	     
     	    </td>
@@ -32,7 +33,7 @@
 		    <td style="text-align:center">
 	    	    <%= link_to 'Editar partido', url_for(:partido, :editar, :partido_id => partido.id), :class => "btn btn-primary" %>	     
     	    </td>
-    	<% end %>
+    	<% end %>-->
 	</tr>
 
   <% end %>
