@@ -8,7 +8,7 @@ describe 'get :index' do
 
 	  it 'Quiero que responda ok y que muestre partido/list' do
 	  	Makaya2::App.any_instance.should_receive(:render).with('partido/list')
-	  	get 'partido/misPartidos/1'
+	  	get 'v/misPartidos/1'
 	    last_response.should be_ok
 	  end
 	  
