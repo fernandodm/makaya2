@@ -3,7 +3,7 @@
 <table class="table table-bordered" style="width: 70%">
 	<tr>
 		<th style="text-align:center">Nombre Equipo</th>
-        <th style="text-align:center">Acciones</th>		
+        <th style="text-align:center" style="size: 10px">Acciones</th>		
 	</tr>
 	<% @equipos.each do | equipo | %>
 

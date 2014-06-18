@@ -2,10 +2,10 @@
 
 <table class="table table-bordered">
 	<tr>
-		<th style="text-align:center">Nombre</th>
-		<th style="text-align:center">Cantidad de equipos</th>
-		<th style="text-align:center">Sistema de puntuacion</th>
-	    <th style="text-align:center">Acciones</th>
+		<th>Nombre</th>
+		<th>Cantidad de equipos</th>
+		<th>Sistema de puntuacion</th>
+	    <th>Acciones</th>
 	</tr>
 	<% @torneos.each do | torneo| %>
 
