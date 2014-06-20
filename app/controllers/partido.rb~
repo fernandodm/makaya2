@@ -1,8 +1,8 @@
 Makaya2::App.controllers :partido do
 
-    get :misPartidos, :with =>:fecha_id do
-        @fecha = Fecha.get(params[:fecha_id])
-        @partidos = Partido.find_by_fecha(@fecha)
+    get :misPartidos, :with =>:torneo_id do
+        @torneo = Torneo.get(params[:torneo_id])
+        @partidos = Partido.find_by_torneo(@torneo)
         render 'partido/list'
     end
 
@@ -14,7 +14,7 @@ Makaya2::App.controllers :partido do
     post :update, :with => :partido_id do
         @partido = Partido.get(params[:partido_id])
         @partido_aux = Partido.new(params[:partido])
-        @partidos = Partido.find_by_fecha(@partido.fecha)
+        @partidos = Partido.find_by_torneo(@partido.torneo)
         
         @partido.update(params[:partido])
         if @partido.save
@@ -34,7 +34,7 @@ Makaya2::App.controllers :partido do
     post :update_crear, :with => :partido_id do
       @partido = Partido.get(params[:partido_id])
       @partido_aux = Partido.new(params[:partido])
-      @partidos = Partido.find_by_fecha(@partido.fecha)
+      @partidos = Partido.find_by_torneo(@partido.torneo)
       @partido.update(params[:partido])
       if @partido.save
         flash[:success] = 'Fixture creado'

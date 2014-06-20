@@ -56,7 +56,7 @@ Makaya2::App.controllers :torneo do
         		aryPartidos.push(partido)
       	end
         fecha = Fecha.new
-				fecha.numero = i
+				fecha.numero = 1
 				fecha.partidos = aryPartidos
         aryFechas.push(fecha)
       end

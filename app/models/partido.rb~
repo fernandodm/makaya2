@@ -8,10 +8,10 @@ class Partido
 	property :resultado1, String
 	property :resultado2, String
 
-  belongs_to :fecha
+  belongs_to :torneo
 
 
-	def self.find_by_fecha(fecha_id)
-		Partido.all(:fecha => fecha_id)
+	def self.find_by_torneo(torneo_id)
+		Partido.all(:torneo => torneo_id)
 	end
 end
