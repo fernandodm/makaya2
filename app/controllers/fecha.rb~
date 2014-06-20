@@ -5,7 +5,7 @@ Makaya2::App.controllers :fecha do
         @fechas = Fecha.find_by_torneo(@torneo)
         render 'fecha/list'
     end
-    
+=begin    
     post :update, :with => :fecha_id do
         @fecha = Fecha.get(params[:fecha_id])
         @fecha_aux = Fecha.new(params[:fecha])
@@ -34,4 +34,5 @@ Makaya2::App.controllers :fecha do
         render 'fecha/list'
       end  
     end
+=end
 end
