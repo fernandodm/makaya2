@@ -46,5 +46,3 @@ When(/^cantidad de equipos con \-(\d+)$/) do |arg1|
   fill_in('torneo[cant_equipos]', :with => arg1)    
 end
 
-
-

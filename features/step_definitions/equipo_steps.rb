@@ -28,14 +28,7 @@ Given(/^voy a ver equipos$/) do
 end
 
 Given(/^voy a crear equipo$/) do
-  #click_link('Crear equipo')
-  #page.first("",text: 'Crear equipo').click
-  #all('Crear equipo')[0].click
-first(:link, 'Crear equipo').click
-
-
-
-
+  first(:link, 'Crear equipo').click
 end
 
 When(/^lleno el campo nombre de equipo con "(.*?)"$/) do |arg1|

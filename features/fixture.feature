@@ -14,7 +14,8 @@ Feature: Fixture
     And pts ganados 3
     And pts empatados 1
     And pts perdidos 0
-
+    
+    
   Scenario: Generar el fixture con numero par
     Give que tengo un torneo "Nuevo Torneo" en la pagina de torneos
     When voy a Ver fixture 
@@ -24,8 +25,4 @@ Feature: Fixture
     Give que tengo un torneo "Otro Torneo" en la pagina de torneos
     When voy a Ver fixture 
     Then deberia ver 3 fechas vacias
-
-
-
-
 
