@@ -1,7 +1,7 @@
 <h1>Fixture</h1>
 
 <table class="table table-bordered" style="width: 65%" border="1">
-	<% numero = 1 %>
+	<% numero = 0 %>
 	<% @fechas.each do | fecha | %>
 	<tr>
 		<th>Fecha: <%= numero %></th>	
@@ -27,7 +27,7 @@
 				</tr>
 		<% end %>
 	</tr>
- <% numero += 1%>
+ <% numero = numero + 1%>
   <% end %>
 
 </table>
