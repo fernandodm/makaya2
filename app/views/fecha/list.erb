@@ -5,12 +5,13 @@
 	<tr>
 		<th>Fecha: <% fecha.numero %></th>	
 	</tr>
-
+<% partidos = Partido.find_by_fecha(fecha) %>
 	<tr>
-		<% fecha.partidos.each do | partido | %>
+		<% partidos.each do | partido | %>
 				<tr>
 					<td>
-						<%= partido.equipo1 %>
+						<%  eq = Equipo.get(partido.equipo1_id)%> 
+					    <%= eq.nombre_equipo %>
 					</td>
 					<td>
 						<%= partido.resultado1 %>
@@ -18,9 +19,9 @@
 					<td>
 						<%= partido.resultado2 %>
 					</td>
-					<!--style="width: 130px"-->
 					<td style="width: 245px">
-					<%= partido.equipo2 %>
+					    <%  eq1 = Equipo.get(partido.equipo2_id)%> 
+					    <%= eq1.nombre_equipo %>
 					</td>
 				</tr>
 		<% end %>

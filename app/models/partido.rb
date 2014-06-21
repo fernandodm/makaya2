@@ -3,10 +3,10 @@ class Partido
 
   # property <name>, <type>
   property :id, Serial
-  property :equipo1, String
-	property :equipo2, String
-	property :resultado1, String
-	property :resultado2, String
+  belongs_to :equipo1 , :model => Equipo
+  belongs_to :equipo2 , :model => Equipo
+  property :resultado1, String
+  property :resultado2, String
 
   belongs_to :fecha
 
