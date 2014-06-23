@@ -24,6 +24,10 @@
 					    <%  eq1 = Equipo.get(partido.equipo2_id)%> 
 					    <%= eq1.nombre_equipo %>
 					</td>
+					
+					<td>
+							<%= link_to 'Agregar resultado', url_for(:partido, :agregar	, :partido_id => partido.id), :class => "btn btn-primary" %>
+					</td>
 				</tr>
 		<% end %>
 	</tr>

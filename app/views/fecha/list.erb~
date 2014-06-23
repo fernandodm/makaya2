@@ -1,7 +1,7 @@
 <h1>Fixture</h1>
 
 <table class="table table-bordered" style="width: 65%" border="1">
-	<% numero = 0 %>
+	<% numero = 1 %>
 	<% @fechas.each do | fecha | %>
 	<tr>
 		<th>Fecha: <%= numero %></th>	
@@ -24,10 +24,14 @@
 					    <%  eq1 = Equipo.get(partido.equipo2_id)%> 
 					    <%= eq1.nombre_equipo %>
 					</td>
+					
+					<td>
+							<%= link_to 'Agregar resultado', url_for(:fecha, :agregar	, :partido_id => partido.id), :class => "btn btn-primary" %>
+					</td>
 				</tr>
 		<% end %>
 	</tr>
- <% numero = numero + 1%>
+ <% numero += 1%>
   <% end %>
 
 </table>

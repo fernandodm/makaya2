@@ -43,6 +43,9 @@ Makaya2::App.controllers :partido do
       end  
     end
 
+    get :last do
+        render 'torneo/list'
+    end
 
 
 
