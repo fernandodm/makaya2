@@ -1,8 +1,0 @@
-<h1>Editar Partido</h1>
-<% form_for(@partido, "/partido/update/#{@partido.id}") do |f| %>
-
-  <%= partial 'partido/form', :locals => { :f => f } %>
-
-  <%= f.submit "Guardar", :class => "btn btn-primary" %>
-  <%= link_to 'Cancelar', url_for(:torneo, :latest), :class => "btn btn-secondary" %>
-<% end %>

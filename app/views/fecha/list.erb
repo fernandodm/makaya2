@@ -1,37 +1,43 @@
 <h1>Fixture</h1>
 
-<table class="table table-bordered" style="width: 65%" border="1">
-	<% numero = 1 %>
+<table class="table table-bordered" style="width: 80%" border="1">
 	<% @fechas.each do | fecha | %>
 	<tr>
-		<th>Fecha: <%= numero %></th>	
+		<th>Fecha: <%= fecha.numero %></th>	
 	</tr>
 <% partidos = Partido.find_by_fecha(fecha) %>
 	<tr>
 		<% partidos.each do | partido | %>
-				<tr>
-					<td>
-						<%  eq = Equipo.get(partido.equipo1_id)%> 
-					    <%= eq.nombre_equipo %>
-					</td>
-					<td>
-						<%= partido.resultado1 %>
-					</td>
-					<td>
-						<%= partido.resultado2 %>
-					</td>
-					<td style="width: 245px">
-					    <%  eq1 = Equipo.get(partido.equipo2_id)%> 
-					    <%= eq1.nombre_equipo %>
-					</td>
+			<tr>
+				<td style="width: 245px">
+					<%  eq = Equipo.get(partido.equipo1_id)%> 
+				    <%= eq.nombre_equipo %>
+				</td>
+				<td>
+					<%= partido.resultado1 %>
+				</td>
+				<td>
+					<%= partido.resultado2 %>
+				</td>
+				<td style="width: 245px">
+				    <%  eq1 = Equipo.get(partido.equipo2_id)%> 
+				    <%= eq1.nombre_equipo %>
+				</td>
 					
-					<td>
-							<%= link_to 'Agregar resultado', url_for(:partido, :agregar	, :partido_id => partido.id), :class => "btn btn-primary" %>
-					</td>
+	            <% if eq.nombre_equipo != nil && eq1.nombre_equipo != nil	%>
+				    <% if partido.resultado1.nil? %>
+				        <td style="text-align:center">
+			    	        <%= link_to 'Agregar resultado', url_for(:partido, :agregar	, :partido_id => partido.id), :class => "btn btn-primary" %>
+				        </td>
+				    <% else %>
+				        <td style="text-align:center">
+			    	        <%= link_to 'Editar resultado', url_for(:partido, :cambiar_resultado, :partido_id => partido.id), :class => "btn btn-primary" %>
+				        </td>
+				    <% end %>
+				<% end %>
 				</tr>
 		<% end %>
 	</tr>
- <% numero += 1%>
   <% end %>
 
 </table>

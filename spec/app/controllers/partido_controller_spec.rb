@@ -14,21 +14,21 @@ describe 'get :index' do
 	  
     end
 
-  describe 'get :editar_crear, with => :torneo_id' do
+  describe 'get :agregar, with => :partido_id' do
 
       it 'Quiero que responda ok y que muestre partido/new' do
         Makaya2::App.any_instance.should_receive(:render).with('partido/new')
-        get 'partido/editar_crear/2'
+        get 'partido/agregar/2'
         last_response.should be_ok
       end
         
   end
   
-  describe 'get :editar, with => :torneo_id' do
+  describe 'get :cambiar_resultado => :partido_id' do
 
       it 'Quiero que responda ok y que muestre partido/editar' do
         Makaya2::App.any_instance.should_receive(:render).with('partido/edit')
-        get 'partido/editar/1'
+        get 'partido/cambiar_resultado/1'
         last_response.should be_ok
       end
         
