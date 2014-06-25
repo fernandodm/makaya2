@@ -29,16 +29,8 @@ Feature: Resultado
     And agrego ""
     And ""
 		And confirmo el resultado
-    Then deberia ver "Deben llenarse ambos campos"
-
-  Scenario: Agregar resultado con valores no numeros
-    Give que tengo un torneo "Nuevo Torneo" en la pagina de torneos
-    When voy a ver fixture
-    And voy a agregar resultado 
-    And agrego "hola"
-    And "chau"
-		And confirmo el resultado
     Then deberia ver "Los valores ingresados son incorrectos"
+
 
   Scenario: Editar resultado con valores negativos
     Give que tengo un torneo "Nuevo Torneo" en la pagina de torneos
