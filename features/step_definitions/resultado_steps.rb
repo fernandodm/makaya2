@@ -25,6 +25,13 @@ When(/^voy a agregar resultado$/) do
 	first(:link, 'Agregar resultado').click
 end
 
+When(/^voy a editar resultado$/) do
+  visit '/torneo/latest'
+	click_link('Ver Fixture')
+	first(:link, 'Editar resultado').click
+end
+
+
 When(/^agrego (\d+)$/) do |arg1|
   fill_in('partido[resultado1]', :with => arg1)
 end
@@ -44,5 +51,10 @@ end
 When(/^confirmo el resultado$/) do
   click_button('Cargar')
 end
+
+When(/^guardo el resultado$/) do
+	click_button('Guardar')  
+end
+
 
 

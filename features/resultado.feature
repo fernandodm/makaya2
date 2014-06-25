@@ -40,11 +40,11 @@ Feature: Resultado
 		And confirmo el resultado
     Then deberia ver "Los valores ingresados son incorrectos"
 
-  Scenario: Agregar resultado con valores negativos
+  Scenario: Editar resultado con valores negativos
     Give que tengo un torneo "Nuevo Torneo" en la pagina de torneos
     When voy a ver fixture
-    And voy a agregar resultado 
+    And voy a editar resultado 
     And agrego "-2"
     And "-1"
-		And confirmo el resultado
+		And guardo el resultado
     Then deberia ver "Los valores ingresados son incorrectos"
