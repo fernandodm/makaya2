@@ -1,0 +1,41 @@
+<h1 style="text-align:center">Posiciones</h1>
+
+<table class="table table-bordered" border="1" style="width: 60%; margin: 0 auto">
+	<tr style="background: #E6E6E6">
+		<th style="text-align:center">Equipo</th>
+		<th style="text-align:center">G</th>
+		<th style="text-align:center">E</th>
+	  	<th style="text-align:center">P</th>
+		<th style="text-align:center">pts</th>
+	</tr>
+	<% bordear = true %>
+	<% @equipos.each do | equipo| %>
+	<% if bordear	%>
+	<tr style="background: #0080FF" >
+	<% else %>
+	<tr style="background: #E0ECF8">
+	<% end %>		
+		<td>
+			<%= equipo.nombre_equipo %>
+		</td>
+		<td style="width: 40px; text-align:center">
+			<%= equipo.ganados %>
+		</td>
+		<td style="width: 40px; text-align:center">
+			<%= equipo.empatados %>
+		</td>
+		<td style="width: 40px; text-align:center">
+			<%= equipo.perdidos %>
+		</td>		
+		<td style="width: 40px; text-align:center">
+			<%= equipo.pts %>
+		</td>
+	</tr>
+	<% bordear = false %>
+  <% end %>
+	<td>
+		<%= link_to 'Volver', url_for(:torneo, :latest), :class => "btn btn-primary" %>
+	</td>
+</table>
+
+

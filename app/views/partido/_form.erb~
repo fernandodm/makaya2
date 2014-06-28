@@ -1,8 +1,8 @@
-	<%= f.label @partido.equipo1.nombre_equipo %>	
+	<%= @partido.equipo1.nombre_equipo %>	
 
  	<%= f.text_field :resultado1, :class => "input-block" %>
 
-	<%= f.label @partido.equipo2.nombre_equipo %>
+	<%= f.label @partido.equipo1.nombre_equipo %>
  	<%= f.text_field :resultado2, :class => "input-block" %>
 
   <br/>

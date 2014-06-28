@@ -13,7 +13,7 @@ Makaya2::App.controllers :partido do
 
   post :update, :with => :partido_id do
  
-       @partido = Partido.get(params[:partido_id])
+      @partido = Partido.get(params[:partido_id])
         @partido_aux = Partido.new(params[:partido])
         @bol = true
         if(@partido_aux.resultado1.to_i >= 0 && @partido_aux.resultado2.to_i >=0 && @partido_aux.resultado1.to_i != "" && @partido_aux.resultado2.to_i != "" ) then 
@@ -21,12 +21,52 @@ Makaya2::App.controllers :partido do
         else 
             @bol = false         
         end
-        
-        
+
         if @bol then
            @partido.update(params[:partido])
-           if @partido.save
-            flash[:success] = 'Partido cargado'
+						#ya que se modificara el partido primero le quito los puntos
+						#y datos correspondientes al equipo, para asi agregarle
+						#los nuevos datos
+						if($result1 == $result2)
+							@partido.equipo1.pts -= @partido.equipo1.torneo.pts_empatados 
+							@partido.equipo1.empatados -= 1
+							@partido.equipo2.pts -= @partido.equipo2.torneo.pts_empatados  
+							@partido.equipo2.empatados -= 1
+						elsif($result1 > $result2)
+							@partido.equipo1.pts -= @partido.equipo1.torneo.pts_ganados		
+							@partido.equipo1.ganados -= 1
+							@partido.equipo2.pts -= @partido.equipo2.torneo.pts_perdidos 
+							@partido.equipo2.perdidos -= 1
+						else
+							@partido.equipo2.pts -= @partido.equipo2.torneo.pts_ganados		
+							@partido.equipo2.ganados -= 1
+							@partido.equipo1.pts -= @partido.equipo1.torneo.pts_perdidos 
+							@partido.equipo1.perdidos -= 1	
+					end
+           if @partido.save		
+						##Habria q mandarlo a otro metodo##
+						##actualizo los equipos despues del editar partido
+						####################################
+						if(@partido.resultado1.to_i > @partido.resultado2.to_i)
+							@partido.equipo1.pts += @partido.equipo1.torneo.pts_ganados		
+							@partido.equipo1.ganados += 1
+							@partido.equipo2.pts += @partido.equipo2.torneo.pts_perdidos 
+							@partido.equipo2.perdidos += 1
+						elsif(@partido.resultado1.to_i < @partido.resultado2.to_i)
+							@partido.equipo2.pts += @partido.equipo2.torneo.pts_ganados		
+							@partido.equipo2.ganados += 1
+							@partido.equipo1.pts += @partido.equipo1.torneo.pts_perdidos 
+							@partido.equipo1.perdidos += 1		
+						else
+							@partido.equipo1.pts += @partido.equipo1.torneo.pts_empatados 
+							@partido.equipo1.empatados += 1
+							@partido.equipo2.pts += @partido.equipo2.torneo.pts_empatados  
+							@partido.equipo2.empatados += 1
+						end
+						@partido.equipo1.save
+						@partido.equipo2.save
+						############################################					
+						flash[:success] = 'Partido cargado'
             redirect "/torneo/latest"
            end
         else
@@ -37,6 +77,8 @@ Makaya2::App.controllers :partido do
   
   get :cambiar_resultado, :with => :partido_id do
     @partido = Partido.get(params[:partido_id])
+		$result1 = @partido.resultado1
+		$result2 = @partido.resultado2
     render 'partido/edit'
   end
 
@@ -54,15 +96,36 @@ Makaya2::App.controllers :partido do
         if @bol then
            @partido.update(params[:partido])
            if @partido.save
+						##Habria q mandarlo a otro metodo##
+						##actualizo los equipos despues del partido
+						####################################
+						if(@partido.resultado1.to_i > @partido.resultado2.to_i)
+							@partido.equipo1.pts += @partido.equipo1.torneo.pts_ganados		
+							@partido.equipo1.ganados += 1
+							@partido.equipo2.pts += @partido.equipo2.torneo.pts_perdidos 
+							@partido.equipo2.perdidos += 1
+						elsif(@partido.resultado1.to_i < @partido.resultado2.to_i)
+							@partido.equipo2.pts += @partido.equipo2.torneo.pts_ganados		
+							@partido.equipo2.ganados += 1
+							@partido.equipo1.pts += @partido.equipo1.torneo.pts_perdidos 
+							@partido.equipo1.perdidos += 1		
+						else
+							@partido.equipo1.pts += @partido.equipo1.torneo.pts_empatados 
+							@partido.equipo1.empatados += 1
+							@partido.equipo2.pts += @partido.equipo2.torneo.pts_empatados  
+							@partido.equipo2.empatados += 1
+						end
+						@partido.equipo1.save
+						@partido.equipo2.save		
+						##################################
             flash[:success] = 'Partido cargado'
             redirect "/torneo/latest"
            end
         else
             flash.now[:error] = 'Los valores ingresados son incorrectos'
             render 'partido/new'
-        end  
+        end 
   end
- 
 
 
 end

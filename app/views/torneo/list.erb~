@@ -9,7 +9,7 @@
 	</tr>
 	<% @torneos.each do | torneo| %>
 
-	<tr style="background: #E0ECF8">
+	<tr>
 		<td>
 			<%= torneo.nombre %>
 		</td>

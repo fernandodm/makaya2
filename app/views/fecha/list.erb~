@@ -2,14 +2,14 @@
 
 <table class="table table-bordered" style="width: 80%" border="1">
 	<% @fechas.each do | fecha | %>
-	<tr>
+	<tr style="background: #E6E6E6">
 		<th>Fecha: <%= fecha.numero %></th>	
 	</tr>
 <% partidos = Partido.find_by_fecha(fecha) %>
-	<tr>
+	<tr style="background: #E0ECF8">
 		<% partidos.each do | partido | %>
 			<tr>
-				<td style="width: 245px">
+				<td style="width: 245px" >
 					<%  eq = Equipo.get(partido.equipo1_id)%> 
 				    <%= eq.nombre_equipo %>
 				</td>

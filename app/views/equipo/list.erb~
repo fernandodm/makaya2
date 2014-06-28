@@ -1,7 +1,7 @@
 <h1><%= @torneo.nombre %>: Equipos </h1>
 
 <table class="table table-bordered" style="width: 70%">
-	<tr>
+	<tr style="background: #E6E6E6">
 		<th style="text-align:center">Nombre Equipo</th>
         <th style="text-align:center">Acciones</th>		
 	</tr>
