@@ -1,5 +1,5 @@
 <h1><%= @torneo.nombre %>: Equipos </h1>
-
+<body background="img/fondo.png">
 <table class="table table-bordered" style="width: 70%">
 	<tr style="background: #E6E6E6">
 		<th style="text-align:center">Nombre Equipo</th>
@@ -7,7 +7,7 @@
 	</tr>
 	<% @equipos.each do | equipo | %>
 
-	<tr>
+	<tr style="background: #E0ECF8">
 		<td>
 			<%= equipo.nombre_equipo %>
 		</td>
@@ -28,3 +28,4 @@
 </table>
 
 <%= link_to 'Volver', url_for(:torneo, :latest), :class => "btn btn-primary" %>
+</body>
