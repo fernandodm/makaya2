@@ -10,8 +10,8 @@ Feature: Tabla
     And pts empatados 1
     And pts perdidos 0
     And lo creo
-		And creo un equipo llamado "Equipo1"
-		And creo otro equipo llamado "Equipo2"
+		And tiene un equipo llamado "Equipo1"
+		And otro equipo llamado "Equipo2"
   
   Scenario: Ver posiciones inicial
     Give que tengo un torneo "Nuevo Torneo" en la pagina de torneos
