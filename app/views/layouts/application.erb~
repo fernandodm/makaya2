@@ -6,7 +6,14 @@
 		<%= stylesheet_link_tag '/assets/application.css' %>
 	</head>
 	<body background="../../img/grey.png">
-		<div class="container">
+<div class="menudes">
+<a href="javascript:void();">Inicio</a>
+<a href="">Portfolio</a>
+<a href="">Acerca de</a>
+<a href="">Contacto</a>
+<div class="marca"></div>
+</div>	
+	<!--<div class="container">
       <div class="masthead">
       	<div class="container">
 
@@ -21,8 +28,8 @@
               </ul>
             </div>
           </div>
-        </div><!-- /.navbar-->
-      </div>
+        </div><!-- /.navbar
+      </div>-->
 
       <div class="container">
 			  <div>

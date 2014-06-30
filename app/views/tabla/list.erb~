@@ -1,4 +1,4 @@
-<h1 style="text-align:center"><%= @torneo.nombre %>: Posiciones</h1>
+<h1 style="text-align:center">Posiciones</h1>
 
 <table class="table table-bordered" border="1" style="width: 60%; margin: 0 auto">
 	<tr style="background: #E6E6E6">
@@ -34,7 +34,7 @@
 	<% bordear = false %>
   <% end %>
 </table>
-</br>
+
 <center>
 		<%= link_to 'Volver', url_for(:torneo, :latest), :class => "btn btn-primary" %>
 	</center>
