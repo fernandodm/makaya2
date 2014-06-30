@@ -11,7 +11,7 @@ Feature: Resultado
     And pts perdidos 0
     And lo creo
 		And tiene un equipo llamado "Boca"
-		And otro equipo llamado "RiBer"
+		And otro equipo llamado "River"
   
   Scenario: Agregar resultado con valores correctos
     Give que tengo un torneo "Nuevo Torneo" en la pagina de torneos

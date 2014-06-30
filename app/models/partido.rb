@@ -5,8 +5,8 @@ class Partido
   property :id, Serial
   belongs_to :equipo1 , :model => Equipo
   belongs_to :equipo2 , :model => Equipo
-  property :resultado1, String
-  property :resultado2, String
+  property :resultado1, Integer
+  property :resultado2, Integer
 
   belongs_to :fecha
 
@@ -16,7 +16,7 @@ class Partido
 	end
 
     def chequearValores
-        return @resultado1.to_i >= 0 && @resultadp2.to_i >= 0
+        return @resultado1.to_i >= 0 && @resultado2.to_i >= 0
     
     end
 end

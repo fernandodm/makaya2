@@ -6,8 +6,4 @@ Makaya2::App.controllers :fecha do
     	render 'fecha/list'
     end
 
-	get :agregar , :with => :partido_id do
-
-		render 'torneo/latest'
-	end
 end

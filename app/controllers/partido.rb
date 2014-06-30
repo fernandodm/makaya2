@@ -14,15 +14,11 @@ Makaya2::App.controllers :partido do
   post :update, :with => :partido_id do
  
       @partido = Partido.get(params[:partido_id])
-        @partido_aux = Partido.new(params[:partido])
-        @bol = true
-        if(@partido_aux.resultado1.to_i >= 0 && @partido_aux.resultado2.to_i >=0 && @partido_aux.resultado1.to_i != "" && @partido_aux.resultado2.to_i != "" ) then 
-            @bol
-        else 
-            @bol = false         
-        end
-
-        if @bol then
+      $result1 = @partido.resultado1
+	  $result2 = @partido.resultado2
+      @partido_aux = Partido.new(params[:partido])
+      
+      if @partido_aux.chequearValores then
            @partido.update(params[:partido])
 						#ya que se modificara el partido primero le quito los puntos
 						#y datos correspondientes al equipo, para asi agregarle
@@ -66,8 +62,11 @@ Makaya2::App.controllers :partido do
 						@partido.equipo1.save
 						@partido.equipo2.save
 						############################################					
-						flash[:success] = 'Partido cargado'
-            redirect "/torneo/latest"
+            flash[:success] = 'Partido cargado'
+            redirect "/fecha/misFechas/#{@partido.fecha.torneo.id}"
+           else
+            flash.now[:error] = 'Los valores ingresados son incorrectos'
+            render 'partido/new'
            end
         else
             flash.now[:error] = 'Los valores ingresados son incorrectos'
@@ -77,8 +76,6 @@ Makaya2::App.controllers :partido do
   
   get :cambiar_resultado, :with => :partido_id do
     @partido = Partido.get(params[:partido_id])
-		$result1 = @partido.resultado1
-		$result2 = @partido.resultado2
     render 'partido/edit'
   end
 
@@ -86,14 +83,8 @@ Makaya2::App.controllers :partido do
  
        @partido = Partido.get(params[:partido_id])
         @partido_aux = Partido.new(params[:partido])
-        @bol = true
-        if(@partido_aux.resultado1.to_i >= 0 && @partido_aux.resultado2.to_i >=0 && @partido_aux.resultado1 != "" && @partido_aux.resultado2.to_i != "" ) then 
-            @bol
-        else 
-            @bol = false         
-        end
         
-        if @bol then
+        if @partido_aux.chequearValores then
            @partido.update(params[:partido])
            if @partido.save
 						##Habria q mandarlo a otro metodo##
@@ -119,7 +110,10 @@ Makaya2::App.controllers :partido do
 						@partido.equipo2.save		
 						##################################
             flash[:success] = 'Partido cargado'
-            redirect "/torneo/latest"
+            redirect "/fecha/misFechas/#{@partido.fecha.torneo.id}"
+           else
+            flash.now[:error] = 'Los valores ingresados son incorrectos'
+            render 'partido/new'
            end
         else
             flash.now[:error] = 'Los valores ingresados son incorrectos'

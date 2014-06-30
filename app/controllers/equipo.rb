@@ -27,7 +27,7 @@ Makaya2::App.controllers :equipo do
            @equipo.update(params[:equipo])
            if @equipo.save
             flash[:success] = 'Equipo actualizado'
-            redirect "/torneo/latest"
+            redirect "/equipo/misEquipos/#{@equipo.torneo.id}"
            end
         else
             flash.now[:error] = 'El nombre esta usado'
@@ -56,7 +56,7 @@ Makaya2::App.controllers :equipo do
            @equipo.update(params[:equipo])
            if @equipo.save
             flash[:success] = 'Equipo creado'
-            redirect "/torneo/latest"
+            redirect "/equipo/misEquipos/#{@equipo.torneo.id}"
            end
         else
             flash.now[:error] = 'El nombre esta usado'
